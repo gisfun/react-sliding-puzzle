@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Board from "./Board";
-import { updateURLParameter } from "./helpers"
+import { updateURLParameter, pickRandomTileUrl } from "./helpers"
 
 function App() {
   const [imgUrl, setImgUrl] = useState("")
@@ -9,6 +9,9 @@ function App() {
     const urlParams = new URLSearchParams(window.location.search)
     if (urlParams.has("img")) {
       setImgUrl(urlParams.get("img"))
+    }
+    else {
+      setImgUrl(pickRandomTileUrl())
     }
   }, [])
 

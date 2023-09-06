@@ -83,3 +83,19 @@ export function updateURLParameter(url, param, paramVal) {
   var rows_txt = temp + "" + param + "=" + paramVal;
   return baseURL + "?" + newAdditionalURL + rows_txt;
 }
+
+export function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+
+  return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+export function pickRandomTileUrl() {
+  // 16/51730/32497 (top right)
+  // 16/51627/32559 (bottom left)
+  var randX = getRandomInt(51627,51730);
+  var randY = getRandomInt(32497,32559);
+  var tileUrl = `https://www.onemap.gov.sg/maps/tiles/Original_HD/16/${randX}/${randY}.png`;
+  return tileUrl;
+}

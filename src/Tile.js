@@ -11,6 +11,9 @@ function Tile(props) {
   const tileStyle = {
     width: `calc(100% / ${GRID_SIZE})`,
     height: `calc(100% / ${GRID_SIZE})`,
+    borderStyle: `groove`,
+    borderWidth: `thin`,
+    borderColor: `black`,
     translateX: visualPos.x,
     translateY: visualPos.y,
     backgroundImage: `url(${imgUrl})`,
